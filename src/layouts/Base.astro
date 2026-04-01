@@ -1,0 +1,55 @@
+---
+import '../styles/global.css'
+import '@tabler/icons-webfont/dist/tabler-icons.css'
+
+interface Props {
+    title?: string
+    lang?: string
+}
+
+const { title = 'Isaque Santos | dev web', lang = 'pt-BR' } = Astro.props
+---
+
+<!doctype html>
+<html lang={lang}>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" type="image/png" href="/favicon.png" />
+        <link rel="icon" href="/favicon.ico" />
+        <meta name="generator" content={Astro.generator} />
+        <title>{title}</title>
+        <meta name="description" content="CV do dev Isaque Santos" />
+
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap"
+            rel="stylesheet"
+        />
+
+        <!-- Spotlight nos cards -->
+        <script is:inline>
+            document.addEventListener('mousemove', function (e) {
+                document.querySelectorAll('.card-glow').forEach(function (card) {
+                    var rect = card.getBoundingClientRect()
+                    card.style.setProperty('--mouse-x', (e.clientX - rect.left) + 'px')
+                    card.style.setProperty('--mouse-y', (e.clientY - rect.top) + 'px')
+                })
+            })
+        </script>
+
+        <!-- Anti-flash tema -->
+        <script is:inline>
+            ;(function () {
+                var match = document.cookie.match(/(?:^|;\s*)theme=([^;]+)/)
+                var theme = match ? match[1] : 'dark'
+                document.documentElement.setAttribute('data-theme', theme)
+            })()
+        </script>
+    </head>
+    <body class="min-h-screen bg-canvas text-text antialiased">
+        <slot />
+    </body>
+</html>

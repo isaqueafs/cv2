@@ -1,0 +1,130 @@
+---
+interface Props {
+    lang?: 'pt' | 'en'
+}
+
+const { lang = 'pt' } = Astro.props
+
+const nav = {
+    pt: [
+        { label: 'sobre',       href: '#sobre' },
+        { label: 'experiência', href: '#experiencia' },
+        { label: 'projetos',    href: '#projetos' },
+        { label: 'contato',     href: '#contato' },
+    ],
+    en: [
+        { label: 'about',      href: '#about' },
+        { label: 'experience', href: '#experience' },
+        { label: 'projects',   href: '#projects' },
+        { label: 'contact',    href: '#contact' },
+    ],
+}
+
+const links = nav[lang]
+const homePt = '/'
+const homeEn = '/en/'
+---
+
+<header class="sticky top-0 z-50 border-b border-border bg-canvas">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 h-12 flex items-center justify-between gap-6">
+
+        <!-- Wordmark -->
+        <a href={lang === 'pt' ? homePt : homeEn}
+           class="font-display text-2xl text-accent tracking-widest leading-none shrink-0">
+            ISAQUE SANTOS
+        </a>
+
+        <!-- Nav -->
+        <nav id="main-nav">
+            <ul class="flex items-center gap-5">
+                {links.map(link => (
+                    <li>
+                        <a href={link.href}
+                           data-nav-link
+                           class="text-xs text-muted font-mono hover:text-text transition-colors duration-150">
+                            {link.label}
+                        </a>
+                    </li>
+                ))}
+            </ul>
+        </nav>
+
+        <!-- Controles direita -->
+        <div class="flex items-center gap-3 shrink-0">
+            <!-- Seletor de idioma -->
+            <div class="text-xs font-mono text-muted flex items-center gap-1">
+                <a href={homePt}
+                   class={`hover:text-text transition-colors duration-150 ${lang === 'pt' ? 'text-text' : ''}`}>
+                    pt-br
+                </a>
+                <span>/</span>
+                <a href={homeEn}
+                   class={`hover:text-text transition-colors duration-150 ${lang === 'en' ? 'text-text' : ''}`}>
+                    en-us
+                </a>
+            </div>
+
+            <!-- Toggle tema -->
+            <button
+                id="theme-toggle"
+                class="text-muted hover:text-text text-xs font-mono border border-border rounded px-2 py-0.5 hover:border-accent/40 transition-colors duration-150">
+            </button>
+        </div>
+
+    </div>
+</header>
+
+<script>
+    // Toggle de tema
+    const btn = document.getElementById('theme-toggle')!
+
+    function getTheme() {
+        return document.documentElement.getAttribute('data-theme') || 'dark'
+    }
+
+    function updateLabel() {
+        btn.textContent = getTheme() === 'dark' ? '◑ claro' : '◐ escuro'
+    }
+
+    btn.addEventListener('click', () => {
+        const next = getTheme() === 'dark' ? 'light' : 'dark'
+        document.documentElement.setAttribute('data-theme', next)
+        document.documentElement.classList.add('theme-ready')
+        document.cookie = `theme=${next};path=/;max-age=31536000;SameSite=Lax`
+        updateLabel()
+    })
+
+    updateLabel()
+
+    // Highlight do link ativo no scroll
+    const sections = document.querySelectorAll('main section[id]')
+    const navLinks = document.querySelectorAll('[data-nav-link]')
+
+    function setActive() {
+        const scrollY = window.scrollY + 60
+        const atBottom = window.innerHeight + window.scrollY >= document.body.scrollHeight - 5
+
+        let current = ''
+        sections.forEach(section => {
+            if ((section as HTMLElement).offsetTop <= scrollY) {
+                current = section.id
+            }
+        })
+
+        if (atBottom && sections.length) {
+            current = sections[sections.length - 1].id
+        }
+
+        navLinks.forEach(link => {
+            link.classList.remove('text-text')
+            link.classList.add('text-muted')
+            if (link.getAttribute('href') === `#${current}`) {
+                link.classList.remove('text-muted')
+                link.classList.add('text-text')
+            }
+        })
+    }
+
+    window.addEventListener('scroll', setActive, { passive: true })
+    setActive()
+</script>

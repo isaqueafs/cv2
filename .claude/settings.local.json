@@ -1,0 +1,31 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm -v)",
+      "Bash(npm create:*)",
+      "Bash(mv c:/laragon/www/cv2/astro/* c:/laragon/www/cv2/)",
+      "Bash(mv c:/laragon/www/cv2/astro/.* c:/laragon/www/cv2/)",
+      "Bash(npm install:*)",
+      "Bash(npx astro:*)",
+      "Bash(npm run:*)",
+      "Bash(magick --version)",
+      "Bash(convert --version)",
+      "Bash(magick favicon.svg -resize 48x48 favicon_48.png)",
+      "Bash(magick favicon.svg -resize 32x32 favicon_32.png)",
+      "Bash(magick favicon.svg -resize 16x16 favicon_16.png)",
+      "Bash(magick favicon_16.png favicon_32.png favicon_48.png favicon.ico)",
+      "Bash(rm favicon_16.png favicon_32.png favicon_48.png)",
+      "Bash(magick favicon-novo.png -resize 48x48 fav_48.png)",
+      "Bash(magick favicon-novo.png -resize 32x32 fav_32.png)",
+      "Bash(magick favicon-novo.png -resize 16x16 fav_16.png)",
+      "Bash(magick fav_16.png fav_32.png fav_48.png favicon.ico)",
+      "Bash(cp favicon-novo.png favicon.svg)",
+      "Bash(mv favicon-novo.png favicon.png)",
+      "Bash(rm favicon.svg)",
+      "Bash(magick favicon.png -resize 48x48 fav_48.png)",
+      "Bash(magick favicon.png -resize 32x32 fav_32.png)",
+      "Bash(magick favicon.png -resize 16x16 fav_16.png)",
+      "Bash(rm fav_16.png fav_32.png fav_48.png)"
+    ]
+  }
+}

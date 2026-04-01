@@ -1,0 +1,211 @@
+---
+import Base from '../../layouts/Base.astro'
+
+const year = new Date().getFullYear()
+---
+
+<Base title="Isaque Santos | web dev" lang="en">
+    <main class="min-h-screen bg-canvas text-text">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 py-10 space-y-4">
+
+            <!-- Intro -->
+            <div class="mb-8">
+                <div class="flex items-start justify-between gap-4 mb-3">
+                    <h1 class="font-display text-5xl text-accent tracking-wide leading-none">
+                        Isaque Santos
+                    </h1>
+                    <div class="flex items-center gap-3 pt-1 shrink-0">
+                        <div class="text-xs font-mono text-muted flex items-center gap-1">
+                            <a href="/" class="hover:text-text transition-colors duration-150">pt-br</a>
+                            <span>/</span>
+                            <a href="/en/" class="text-text">en-us</a>
+                        </div>
+                        <button
+                            id="theme-toggle"
+                            class="text-muted hover:text-text text-xs font-mono border border-border rounded px-2 py-0.5 hover:border-accent/40 transition-colors duration-150">
+                        </button>
+                    </div>
+                </div>
+                <p class="text-sm text-text/70 font-mono">
+                    Full-Stack Web Developer · São José do Rio Preto, Brazil · PHP, JavaScript · 5+ years
+                </p>
+            </div>
+
+            <!-- Card grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+
+                <!-- About -->
+                <div class="card-glow bg-surface border border-border rounded p-5 transition-colors duration-200 hover:border-accent/30 hover:bg-surface-raised sm:col-span-2">
+                    <p class="text-xs text-muted uppercase tracking-widest mb-3"><span class="text-accent"> > about</span></p>
+                    <p class="text-sm text-text leading-relaxed">
+                        Passionate developer focused on building web products that actually work.
+                        I work with PHP and JavaScript daily, always striving for clean code and
+                        solutions that make sense for the business.
+                    </p>
+                </div>
+
+                <!-- Experience -->
+                <div class="card-glow bg-surface border border-border rounded p-5 transition-colors duration-200 hover:border-accent/30 hover:bg-surface-raised sm:col-span-2">
+                    <p class="text-xs text-muted uppercase tracking-widest mb-4"><span class="text-accent"> > experience</span></p>
+                    <div class="border-l border-border pl-4">
+                        <div class="flex items-baseline justify-between gap-4 mb-1.5">
+                            <span class="text-sm font-medium text-text">MoveEdu</span>
+                            <span class="text-xs text-muted font-mono shrink-0">Oct 2020 – present</span>
+                        </div>
+                        <div class="space-y-1">
+                            <p class="text-xs text-muted">Development Analyst</p>
+                            <p class="text-xs text-muted">Mid-level Full Stack Developer</p>
+                            <p class="text-xs text-muted">Junior Full Stack Developer</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Skills -->
+                <div class="card-glow bg-surface border border-border rounded p-5 transition-colors duration-200 hover:border-accent/30 hover:bg-surface-raised sm:col-span-2">
+                    <p class="text-xs text-muted uppercase tracking-widest mb-5"><span class="text-accent"> > skills</span></p>
+                    <div class="grid grid-cols-2 gap-5">
+                        <div>
+                            <p class="text-xs text-muted font-mono mb-2">backend</p>
+                            <div class="flex flex-wrap gap-1.5">
+                                {['PHP', 'Laravel', 'Livewire', 'Go'].map(s => (
+                                    <span class="text-xs font-mono text-text bg-canvas border border-border rounded px-2 py-0.5">{s}</span>
+                                ))}
+                            </div>
+                        </div>
+                        <div>
+                            <p class="text-xs text-muted font-mono mb-2">frontend</p>
+                            <div class="flex flex-wrap gap-1.5">
+                                {['JS/TS', 'Tailwind', 'Bootstrap'].map(s => (
+                                    <span class="text-xs font-mono text-text bg-canvas border border-border rounded px-2 py-0.5">{s}</span>
+                                ))}
+                            </div>
+                        </div>
+                        <div>
+                            <p class="text-xs text-muted font-mono mb-2">database</p>
+                            <div class="flex flex-wrap gap-1.5">
+                                {['MySQL', 'PostgreSQL'].map(s => (
+                                    <span class="text-xs font-mono text-text bg-canvas border border-border rounded px-2 py-0.5">{s}</span>
+                                ))}
+                            </div>
+                        </div>
+                        <div>
+                            <p class="text-xs text-muted font-mono mb-2">devops</p>
+                            <div class="flex flex-wrap gap-1.5">
+                                {['Docker'].map(s => (
+                                    <span class="text-xs font-mono text-text bg-canvas border border-border rounded px-2 py-0.5">{s}</span>
+                                ))}
+                            </div>
+                        </div>
+                        <div>
+                            <p class="text-xs text-muted font-mono mb-2">tools</p>
+                            <div class="flex flex-wrap gap-1.5">
+                                {['Git', 'NPM', 'Composer', 'Vite'].map(s => (
+                                    <span class="text-xs font-mono text-text bg-canvas border border-border rounded px-2 py-0.5">{s}</span>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Education -->
+                <div class="card-glow bg-surface border border-border rounded p-5 transition-colors duration-200 hover:border-accent/30 hover:bg-surface-raised">
+                    <p class="text-xs text-muted uppercase tracking-widest mb-4"><span class="text-accent"> > education & certs</span></p>
+                    <div class="space-y-3">
+                        <div class="border-l border-border pl-4">
+                            <span class="text-sm font-medium text-text">Senac Brasil</span>
+                            <p class="text-xs text-muted mt-0.5">Systems Analysis and Development</p>
+                        </div>
+                        <div class="border-l border-border pl-4">
+                            <a href="https://cursos.alura.com.br/user/isaque-santos0/fullCertificate/2d3211521741cb72f0c2c6a8b673279d"
+                               target="_blank" rel="noopener noreferrer"
+                               class="inline-flex items-center gap-1 text-sm font-medium text-text hover:text-accent transition-colors duration-150">
+                                Alura <i class="ti ti-external-link text-xs"></i>
+                            </a>
+                            <p class="text-xs text-muted mt-0.5">Full certificate — web development</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Languages -->
+                <div class="card-glow bg-surface border border-border rounded p-5 transition-colors duration-200 hover:border-accent/30 hover:bg-surface-raised">
+                    <p class="text-xs text-muted uppercase tracking-widest mb-4"><span class="text-accent"> > languages</span></p>
+                    <div class="space-y-2">
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-text">Portuguese</span>
+                            <span class="text-xs text-muted font-mono">Native</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-text">English</span>
+                            <span class="text-xs text-muted font-mono">Professional</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-text">Spanish</span>
+                            <span class="text-xs text-muted font-mono">Basic</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projects -->
+                <div class="card-glow bg-surface border border-border rounded p-5 transition-colors duration-200 hover:border-accent/30 hover:bg-surface-raised sm:col-span-2">
+                    <p class="text-xs text-muted uppercase tracking-widest mb-3"><span class="text-accent"> > projects</span></p>
+                    <p class="text-sm text-muted leading-relaxed">
+                        Section under construction. Check out my work on{' '}
+                        <a href="https://linkedin.com/in/isaqueafs"
+                           target="_blank" rel="noopener noreferrer"
+                           class="text-accent hover:text-accent/80 transition-colors duration-150">
+                            LinkedIn
+                        </a>.
+                    </p>
+                </div>
+
+            </div>
+
+            <footer class="pt-4 border-t border-border flex items-center justify-between gap-6 flex-wrap">
+                <p class="text-xs text-muted font-mono">© {year} Isaque Santos</p>
+                <div class="flex items-center gap-4">
+                    <a href="mailto:isaqueafsantos@gmail.com"
+                       class="flex items-center gap-1.5 text-xs text-muted hover:text-text transition-colors duration-150">
+                        <i class="ti ti-mail text-accent/70"></i>
+                        <span>isaqueafsantos@gmail.com</span>
+                    </a>
+                    <a href="https://linkedin.com/in/isaqueafs"
+                       target="_blank" rel="noopener noreferrer"
+                       class="flex items-center gap-1.5 text-xs text-muted hover:text-text transition-colors duration-150">
+                        <i class="ti ti-brand-linkedin text-accent/70"></i>
+                        <span>isaqueafs</span>
+                    </a>
+                    <a href="tel:+5517982052201"
+                       class="flex items-center gap-1.5 text-xs text-muted hover:text-text transition-colors duration-150">
+                        <i class="ti ti-phone text-accent/70"></i>
+                        <span>+55 (17) 98205-2201</span>
+                    </a>
+                </div>
+            </footer>
+
+        </div>
+    </main>
+</Base>
+
+<script>
+    const btn = document.getElementById('theme-toggle')!
+
+    function getTheme() {
+        return document.documentElement.getAttribute('data-theme') || 'dark'
+    }
+
+    function updateLabel() {
+        btn.innerHTML = getTheme() === 'dark'
+            ? '<i class="ti ti-sun"></i>'
+            : '<i class="ti ti-moon"></i>'
+    }
+
+    btn.addEventListener('click', () => {
+        const next = getTheme() === 'dark' ? 'light' : 'dark'
+        document.documentElement.setAttribute('data-theme', next)
+        document.documentElement.classList.add('theme-ready')
+        document.cookie = `theme=${next};path=/;max-age=31536000;SameSite=Lax`
+        updateLabel()
+    })
+
+    updateLabel()
+</script>
