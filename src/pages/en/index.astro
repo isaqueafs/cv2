@@ -2,9 +2,10 @@
 import Base from '../../layouts/Base.astro'
 
 const year = new Date().getFullYear()
+const base = import.meta.env.BASE_URL.replace(/\/$/, '')
 ---
 
-<Base title="Isaque Santos | web dev" lang="en">
+<Base title="Isaque Santos | web dev" description="Full-stack web developer with 5+ years of experience in PHP, JavaScript, Laravel and Go." lang="en">
     <main class="min-h-screen bg-canvas text-text">
         <div class="max-w-3xl mx-auto px-4 sm:px-6 py-10 space-y-4">
 
@@ -16,9 +17,9 @@ const year = new Date().getFullYear()
                     </h1>
                     <div class="flex items-center gap-3 pt-1 shrink-0">
                         <div class="text-xs font-mono text-muted flex items-center gap-1">
-                            <a href="/" class="hover:text-text transition-colors duration-150">pt-br</a>
+                            <a href={`${base}/`} class="hover:text-text transition-colors duration-150">pt-br</a>
                             <span>/</span>
-                            <a href="/en/" class="text-text">en-us</a>
+                            <a href={`${base}/en/`} class="text-text">en-us</a>
                         </div>
                         <button
                             id="theme-toggle"

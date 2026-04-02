@@ -1,5 +1,7 @@
 ---
 import Base from '../layouts/Base.astro'
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '')
 ---
 
 <Base title="404 — Isaque Santos" lang="pt-BR">
@@ -20,17 +22,17 @@ import Base from '../layouts/Base.astro'
                 </p>
 
                 <div class="border-t border-border pt-5 space-y-2">
-                    <a href="/"
+                    <a href={`${base}/`}
                        class="flex items-center gap-3 text-sm text-muted hover:text-text transition-colors duration-150 group">
                         <i class="ti ti-home text-accent/70 text-base w-4 group-hover:text-accent transition-colors duration-150"></i>
                         <span>isaque santos · dev web</span>
                     </a>
-                    <a href="/#contato"
+                    <a href={`${base}/#contato`}
                        class="flex items-center gap-3 text-sm text-muted hover:text-text transition-colors duration-150 group">
                         <i class="ti ti-mail text-accent/70 text-base w-4 group-hover:text-accent transition-colors duration-150"></i>
                         <span>isaqueafsantos@gmail.com</span>
                     </a>
-                    <a href="/en/"
+                    <a href={`${base}/en/`}
                        class="flex items-center gap-3 text-sm text-muted hover:text-text transition-colors duration-150 group">
                         <i class="ti ti-world text-accent/70 text-base w-4 group-hover:text-accent transition-colors duration-150"></i>
                         <span>switch to english version</span>
