@@ -1,43 +1,32 @@
-# Astro Starter Kit: Minimal
+# cv2 — Isaque Santos
 
-```sh
-npm create astro@latest -- --template minimal
-```
+Portfolio/CV pessoal, disponível em PT-BR e EN-US.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+**Live:** [isaqueafs.github.io/cv2](https://isaqueafs.github.io/cv2)
 
-## 🚀 Project Structure
+## Stack
 
-Inside of your Astro project, you'll see the following folders and files:
+- [Astro](https://astro.build) — framework
+- [Tailwind CSS v4](https://tailwindcss.com) — estilos
+- [Alpine.js](https://alpinejs.dev) — interatividade
+- GitHub Actions — deploy automático para GitHub Pages
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+## Comandos
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+| Comando          | Ação                                        |
+| :--------------- | :------------------------------------------ |
+| `npm install`    | Instala as dependências                     |
+| `npm run dev`    | Inicia o servidor local em `localhost:4321` |
+| `npm run build`  | Gera o build de produção em `./dist/`       |
+| `npm run preview`| Pré-visualiza o build localmente            |
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+## Rotas
 
-Any static assets, like images, can be placed in the `public/` directory.
+| Rota      | Descrição        |
+| :-------- | :--------------- |
+| `/cv2/`   | Versão PT-BR     |
+| `/cv2/en/`| Versão EN-US     |
 
-## 🧞 Commands
+## Deploy
 
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+O deploy é feito automaticamente via GitHub Actions a cada push na branch `main`. O workflow está em [.github/workflows/deploy.yml](.github/workflows/deploy.yml).
