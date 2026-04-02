@@ -21,8 +21,9 @@ const nav = {
 }
 
 const links = nav[lang]
-const homePt = '/'
-const homeEn = '/en/'
+const base = import.meta.env.BASE_URL.replace(/\/$/, '')
+const homePt = `${base}/`
+const homeEn = `${base}/en/`
 ---
 
 <header class="sticky top-0 z-50 border-b border-border bg-canvas">
